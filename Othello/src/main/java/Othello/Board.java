@@ -9,5 +9,14 @@ package Othello;
  * @author aleja
  */
 public class Board {
-    
+    protected nodeDisc start;
+
+    public Board() {
+        this.start = null;
+    }
+    public void buildBoard(){
+        
+        
+    }
+
 }
