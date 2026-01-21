@@ -38,13 +38,9 @@ public class nodeDisc {
     public boolean isEmpty() {
         return this.disc == null;
     }
-
-    public void putDisc(Disc disc) {
-        this.disc = disc;
-    }
-
+    
     public void removeDisc() {
         this.disc = null;
     }
-
+    
 }

@@ -1,3 +1,4 @@
+package Othello;
 
 import Othello.Disc;
 import Othello.nodeDisc;
@@ -11,23 +12,24 @@ import Othello.nodeDisc;
  * @author aleja
  */
 public class Player {
-
+    
     nodeDisc disc;
-
-    public Player(nodeDisc disc) {
+    
+    public Player(nodeDisc disc, boolean color) {
         this.disc = disc;
+        this.disc.disc.setColor(color);
     }
-
+    
     public nodeDisc getDisc() {
         return disc;
     }
-
+    
     public void setDisc(nodeDisc disc) {
         this.disc = disc;
     }
-
+    
     public void discOnBoard(Disc discOnBoard) {
-        disc.putDisc(discOnBoard);
+        disc.setDisc(discOnBoard);
     }
     
 }
