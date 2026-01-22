@@ -19,6 +19,10 @@ public class Disc {
         this.color = color;
     }
 
+    Disc(boolean color) {
+        this.color = color;
+    }
+
     public boolean isColor() {
         return color;
     }

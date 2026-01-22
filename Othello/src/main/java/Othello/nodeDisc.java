@@ -5,10 +5,10 @@
 package Othello;
 
 /**
- *  
- * Clase nodeDisc simboliza cada casilla dek tablero, tiene
- * sus vecinos y ademas tiene la clase disco que es para 
- * los atributos de cada ficha del juego.
+ *
+ * Clase nodeDisc simboliza cada casilla dek tablero, tiene sus vecinos y ademas
+ * tiene la clase disco que es para los atributos de cada ficha del juego.
+ *
  * @author aleja
  */
 public class nodeDisc {
@@ -22,15 +22,15 @@ public class nodeDisc {
     public nodeDisc upLeft;
 
     public nodeDisc downRight;
-    public nodeDisc downWest;
+    public nodeDisc downLeft;
 
     public Disc disc;
 
+    boolean isValid;
+
     public nodeDisc() {
     }
-    
-    
-    
+
     public nodeDisc(Disc disc) {
         disc = null;
     }
@@ -38,7 +38,7 @@ public class nodeDisc {
     public Disc getDisc() {
         return this.disc;
     }
-    
+
     public void setDisc(Disc disc) {
         this.disc = disc;
     }
@@ -46,9 +46,17 @@ public class nodeDisc {
     public boolean isEmpty() {
         return this.disc == null;
     }
-    
+
     public void removeDisc() {
         this.disc = null;
     }
-    
+
+    public boolean isValid() {
+        return isValid;
+    }
+
+    public void setIsValid(boolean isValid) {
+        this.isValid = isValid;
+    }
+
 }

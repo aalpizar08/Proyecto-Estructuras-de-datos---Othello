@@ -10,10 +10,13 @@ package Othello;
  */
 public class Board {
 
-    protected nodeDisc start;
+    public nodeDisc start;
 
     public Board() {
         this.start = null;
+
+        buildBoard();
+
     }
 
     /**
@@ -24,16 +27,16 @@ public class Board {
 
         nodeDisc prevRowStart = null;
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) {//crea la columna y sus conexiones
 
-            nodeDisc firstInRow = null;//inicio
+            nodeDisc rowStart = null;//inicio
             nodeDisc left = null;//
-            nodeDisc above = prevRowStart;
+            nodeDisc aboveRowConnect = prevRowStart;
 
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 8; j++) {//crea la fila y sus conexiones
                 nodeDisc current = new nodeDisc();
-                if (i == 0) {
-                    firstInRow = current;
+                if (j == 0) {
+                    rowStart = current;
 
                 }
                 if (j == 0 && i == 0) {
@@ -42,20 +45,59 @@ public class Board {
 
                 if (left != null) {//izquierda y derecha
                     current.left = left;
-                    current.right = current;
+                    left.right = current;
                 }
-                if (above != null) {//arriba y abajo
-                    current.up = above;
-                    above.down = current;
-                    if (above.left != null) {
-                        current.upLeft = above.left;
-                        above.left.downRight = current;
+                if (aboveRowConnect != null) {//arriba y abajo
+                    current.up = aboveRowConnect;
+                    aboveRowConnect.down = current;
+                    if (aboveRowConnect.left != null) {//diagonal izquierda
+                        current.upLeft = aboveRowConnect.left;
+                        aboveRowConnect.left.downRight = current;
+                    }
+                    if (aboveRowConnect.right != null) {//diagonal izquierda
+                        current.upRight = aboveRowConnect.right;
+                        aboveRowConnect.right.downLeft = current;
                     }
                 }
+                left = current;
+                if (aboveRowConnect != null) {
+                    aboveRowConnect = aboveRowConnect.right;
+                }
             }
+            prevRowStart = rowStart;
 
         }
 
+    }
+
+    /**
+     * metodo para imprimir el tablero
+     */
+    public void print() {
+        nodeDisc aux = start;   // esquina superior izquierda
+
+        while (aux != null) {//hasta que el aux sea null (esquina abajo derecha)
+            nodeDisc current = aux;
+
+            while (current != null) {
+                char print = ' ';
+                if (current.isEmpty()) {
+                    print = '.';
+                } else {
+
+                    System.out.println();
+
+                    print = current.getDisc().isColor() ? 'B' : 'W';
+
+                }
+
+                System.out.print(print + " ");
+                current = current.right;
+            }
+
+            System.out.println();
+            aux = aux.down;
+        }
     }
 
 }

@@ -1,8 +1,10 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.othello;
+
+import Othello.Board;
+import Othello.Game;
 
 /**
  *
@@ -11,6 +13,7 @@ package com.mycompany.othello;
 public class Othello {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Game game = new Game();           
+        game.getBoard().print();
     }
 }
