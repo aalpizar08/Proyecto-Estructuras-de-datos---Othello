@@ -5,6 +5,7 @@
 package Othello;
 
 /**
+ * La clase esta cargada con el color de la ficha
  *
  * @author aleja
  */
@@ -14,20 +15,12 @@ public class Disc {
     protected boolean color; // true para negro, false para blanco
 
     public Disc(byte id, boolean color) {
-        this.id = id;
-        this.color = color;
-    }
 
-    public byte getId() {
-        return id;
+        this.color = color;
     }
 
     public boolean isColor() {
         return color;
-    }
-
-    public void setID(byte id) {
-        this.id = id;
     }
 
     public void setColor(boolean color) {
