@@ -15,7 +15,7 @@ public class Game {
     public Game() {
         board = new Board();
         arrangeDiscs();
-        validPlays();
+        //validPlays();
     }
 
     public Board getBoard() {
@@ -42,46 +42,53 @@ public class Game {
     }
 
     public void validPlays() {
-    nodeDisc aux = board.start;
-    int contValidPlays = 1;
+        nodeDisc aux = board.start;
+        int contValidPlays = 1;
 
-    while (aux != null) {
-        nodeDisc current = aux;
+        while (aux != null) {
+            nodeDisc current = aux;
 
-        while (current != null) {
-            if (!current.isEmpty()) {
+            while (current != null) {
+                if (!current.isEmpty()) {
 
-                if (current.up != null && current.up.isEmpty())
-                    current.up.setIdValidPlay(contValidPlays++);
+                    if (current.up != null && current.up.isEmpty()) {
+                        current.up.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.down != null && current.down.isEmpty())
-                    current.down.setIdValidPlay(contValidPlays++);
+                    if (current.down != null && current.down.isEmpty()) {
+                        current.down.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.left != null && current.left.isEmpty())
-                    current.left.setIdValidPlay(contValidPlays++);
+                    if (current.left != null && current.left.isEmpty()) {
+                        current.left.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.right != null && current.right.isEmpty())
-                    current.right.setIdValidPlay(contValidPlays++);
+                    if (current.right != null && current.right.isEmpty()) {
+                        current.right.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.upLeft != null && current.upLeft.isEmpty())
-                    current.upLeft.setIdValidPlay(contValidPlays++);
+                    if (current.upLeft != null && current.upLeft.isEmpty()) {
+                        current.upLeft.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.upRight != null && current.upRight.isEmpty())
-                    current.upRight.setIdValidPlay(contValidPlays++);
+                    if (current.upRight != null && current.upRight.isEmpty()) {
+                        current.upRight.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.downRight != null && current.downRight.isEmpty())
-                    current.downRight.setIdValidPlay(contValidPlays++);
+                    if (current.downRight != null && current.downRight.isEmpty()) {
+                        current.downRight.setIdValidPlay(contValidPlays++);
+                    }
 
-                if (current.downLeft != null && current.downLeft.isEmpty())
-                    current.downLeft.setIdValidPlay(contValidPlays++);
+                    if (current.downLeft != null && current.downLeft.isEmpty()) {
+                        current.downLeft.setIdValidPlay(contValidPlays++);
+                    }
+                }
+
+                current = current.right;
             }
 
-            current = current.right; 
+            aux = aux.down;
         }
-
-        aux = aux.down;
     }
-}
-
 
 }

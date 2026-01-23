@@ -11,8 +11,7 @@ package Othello;
  */
 public class Disc {
 
-    
-    protected boolean color; // true para negro, false para blanco
+    public boolean color; // true para negro, false para blanco
 
     public Disc(boolean color) {
 
@@ -26,7 +25,5 @@ public class Disc {
     public void setColor(boolean color) {
         this.color = color;
     }
-
-    
 
 }

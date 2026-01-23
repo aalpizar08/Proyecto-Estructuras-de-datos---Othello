@@ -12,7 +12,8 @@ import Othello.Game;
 public class Othello {
 
     public static void main(String[] args) {
-        Game game = new Game();           
+        Game game = new Game();
+        game.getBoard();
         game.getBoard().print();
     }
 }
