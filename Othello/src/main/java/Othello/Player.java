@@ -17,7 +17,7 @@ public class Player {
 
     public Player(nodeDisc disc, boolean color) {
         this.disc = disc;
-        this.disc.disc.setColor(color);
+        this.disc.getDisc().setColor(color);
     }
 
     public nodeDisc getDisc() {

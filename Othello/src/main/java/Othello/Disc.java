@@ -11,15 +11,11 @@ package Othello;
  */
 public class Disc {
 
-    protected byte id; //id para el tablero
+    
     protected boolean color; // true para negro, false para blanco
 
-    public Disc(byte id, boolean color) {
+    public Disc(boolean color) {
 
-        this.color = color;
-    }
-
-    Disc(boolean color) {
         this.color = color;
     }
 
@@ -30,5 +26,7 @@ public class Disc {
     public void setColor(boolean color) {
         this.color = color;
     }
+
+    
 
 }

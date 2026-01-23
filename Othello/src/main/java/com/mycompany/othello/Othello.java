@@ -3,7 +3,6 @@
  */
 package com.mycompany.othello;
 
-import Othello.Board;
 import Othello.Game;
 
 /**

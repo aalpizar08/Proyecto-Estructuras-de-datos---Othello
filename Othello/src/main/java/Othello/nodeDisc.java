@@ -24,15 +24,15 @@ public class nodeDisc {
     public nodeDisc downRight;
     public nodeDisc downLeft;
 
-    public Disc disc;
+    private Disc disc;
 
-    boolean isValid;
+    private int idValidPlay; //id para el tablero
 
     public nodeDisc() {
     }
 
     public nodeDisc(Disc disc) {
-        disc = null;
+        this.disc = disc;
     }
 
     public Disc getDisc() {
@@ -51,12 +51,15 @@ public class nodeDisc {
         this.disc = null;
     }
 
-    public boolean isValid() {
-        return isValid;
+    public int getIdValidPlay() {
+        return idValidPlay;
     }
 
-    public void setIsValid(boolean isValid) {
-        this.isValid = isValid;
+    public void setIdValidPlay(int idValidPlay) {
+        this.idValidPlay = idValidPlay;
     }
 
+    public void clearValidPlay() {
+        this.idValidPlay = 0;
+    }
 }

@@ -11,13 +11,16 @@ package Othello;
 public class Board {
 
     public nodeDisc start;
+    
 
     public Board() {
         this.start = null;
-
+        
         buildBoard();
 
     }
+
+    
 
     /**
      * este metodo es para inicializar todos los nodos del tablero se hace
@@ -76,23 +79,20 @@ public class Board {
     public void print() {
         nodeDisc aux = start;   // esquina superior izquierda
 
-        while (aux != null) {//hasta que el aux sea null (esquina abajo derecha)
+        while (aux != null) {//hasta que el la columna sea null (esquina abajo derecha)
             nodeDisc current = aux;
 
-            while (current != null) {
-                char print = ' ';
-                if (current.isEmpty()) {
-                    print = '.';
-                } else {
-
-                    System.out.println();
-
-                    print = current.getDisc().isColor() ? 'B' : 'W';
-
+            while (current != null) {//hasta que la fila se acabe
+                if (current.getIdValidPlay() > 0) {
+                    System.out.println(current.getIdValidPlay());
                 }
+                if (current.getIdValidPlay() < 0) {
+                    char print = current.isEmpty() ? '.'
+                            : (current.getDisc().color ? 'X' : 'O');
 
-                System.out.print(print + " ");
-                current = current.right;
+                    System.out.print(print + " ");
+                    current = current.right;
+                }
             }
 
             System.out.println();
